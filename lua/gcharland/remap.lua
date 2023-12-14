@@ -1,2 +1,7 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- Projet files
+vim.keymap.set("n", "<leader>pf", vim.cmd.Ex)
+
+-- Navigate between buffers
+vim.keymap.set("n", "<leader><Tab>", "<cmd>buffer#<cr>")
