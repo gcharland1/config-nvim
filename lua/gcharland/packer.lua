@@ -10,10 +10,10 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     })
-    
+
     -- Harpoon (Pin files for quick access)
     use({'theprimeagen/harpoon'})
-    
+
     -- Linter (Smart highlighting and coloring for programming languages)
     use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
 
@@ -49,16 +49,16 @@ return require('packer').startup(function(use)
             {'saadparwaiz1/cmp_luasnip'},
             {'hrsh7th/cmp-nvim-lsp'},
             {'hrsh7th/cmp-nvim-lua'},
-            
+
             -- Snippets
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
         }
     }
-    
+
     -- Git-like undo tree
     use({'mbbill/undotree'})
-    
+
     -- Lazygit for nvim
     use({
         "kdheepak/lazygit.nvim",
@@ -66,7 +66,18 @@ return require('packer').startup(function(use)
         requires = {
             "nvim-lua/plenary.nvim",
         },
-    })   
+    })
+
+    -- Markdownpreview
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
+    })
+
     -- Colorschemes
     use({'navarasu/onedark.nvim'})
     use({'rose-pine/neovim'})
