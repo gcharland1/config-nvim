@@ -8,3 +8,11 @@ vim.keymap.set("n", "<leader><Tab>", "<cmd>buffer#<cr>")
 
 -- Delete current buffer
 vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>")
+
+-- Yank to clipboard
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+
+-- Delete/Paste without overwriting register
+vim.keymap.set("v", "<leader>p", "pgvy")
+vim.keymap.set("v", "<leader>d", "\"_d")

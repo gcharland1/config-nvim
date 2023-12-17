@@ -8,8 +8,9 @@ require('mason-lspconfig').setup({
         'angularls', -- AngularJs
         'html', --HTML
         'jdtls', -- Java
-        'lua_ls', -- Lua
         'cucumber_language_server', -- Cukes
+        'lua_ls', -- Lua
+        'rust_analyzer', -- Rust
     },
     handlers = {
         lsp.default_setup,
@@ -21,6 +22,15 @@ require('mason-lspconfig').setup({
 })
 
 local cmp = require('cmp')
+-- Unused custom keybingings.
+-- local cmp_select = {behavior = cmp.SelectBehavior.Select}
+-- local cmp_mappings = lsp.defaults.cmp_mappings({
+--   ['<C-S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
+--   ['<C-Tab>'] = cmp.mapping.select_next_item(cmp_select),
+--   ['<C-Cr>'] = cmp.mapping.confirm({ select = true }),
+--   ["<C-Space>"] = cmp.mapping.complete(),
+-- })
+
 cmp.setup({
     sources = {
         {name = 'path'},
