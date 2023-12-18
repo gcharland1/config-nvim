@@ -24,4 +24,3 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
 
 -- Add to harpoon in Netrw
-
