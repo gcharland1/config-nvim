@@ -7,7 +7,8 @@ require('mason-lspconfig').setup({
         'eslint', -- Javascript (Code analyser)
         'angularls', -- AngularJs
         'html', --HTML
-        'jdtls', -- Java
+        'jdtls', -- Java (Requires Python 3.9)
+        -- 'java_language_server', -- Java (Requires JDK18)
         'cucumber_language_server', -- Cukes
         'lua_ls', -- Lua
         'rust_analyzer', -- Rust
@@ -41,6 +42,7 @@ cmp.setup({
 })
 
 lsp.on_attach(function(client, bufnr)
+    print("New buffer attached")
     local opts = {buffer = bufnr, remap = false}
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -54,3 +56,6 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+
+
+lsp.setup()

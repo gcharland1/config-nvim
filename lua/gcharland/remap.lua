@@ -10,8 +10,9 @@ vim.keymap.set("n", "<leader><Tab>", "<cmd>buffer#<cr>")
 vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>")
 
 -- Yank to clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
 
 -- Delete/Paste without overwriting register
 vim.keymap.set("v", "<leader>p", "pgvy")
